@@ -26,67 +26,23 @@ body {
     align-items: center;
 }
 
-.hidden {
-    display: none;
-}
-
-h1 {
-    color: #C5B9CD;
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-p {
-    color: #1b1b1b;
-    text-align: center;
-}
-
-.btn {
-    border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.171);
-    background: rgba(225, 0, 255, 0.1);
-    backdrop-filter: blur(17.5px);
-    color: #E0E0E0;
-    padding: 10px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #048BA8;
-}
-
-.card {
-    box-sizing: border-box;
+.card-vertical {
     border-radius: 15px;
     border: 1px solid rgba(255, 255, 255, 0.171);
     background: rgba(77, 77, 77, 0.10);
     backdrop-filter: blur(17.5px);
     margin: 15px;
-    width: 400px;
-    height: 400px;
-    flex-shrink: 0;
-}
-
-.card-horizontal {
-    border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.171);
-    background: rgba(77, 77, 77, 0.10);
-    backdrop-filter: blur(17.5px);
-    margin: 15px;
-    width: 95%;
+    width: 50%;
     height: auto;
     display: grid;
-    grid-template-columns: 1fr 800px 1fr;
-    /* Three-column layout */
+    grid-template-rows: auto auto;
     gap: 10px;
     padding: 10px;
     align-items: center;
 }
 
 .music-info {
-    grid-column: 1;
+    grid-row: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -107,11 +63,11 @@ p {
 }
 
 .img {
-    width: 64px;
-    height: 64px;
+    width: 256px;
+    height: 256px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    margin-right: 15px;
+    margin: 15px;
     cursor: pointer;
     transition: 0.3s ease-in-out;
 }
@@ -125,22 +81,21 @@ p {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
+    width: 90%;
     gap: 10px;
+    margin-bottom: 30px;
 }
 
 /* Progress Bar */
 .progress-container {
     flex-grow: 1;
     height: 20px;
-    /* Make it thinner */
     background: #ffffff6c;
     border-radius: 18px;
     cursor: pointer;
     position: relative;
 }
 
-/* Progress Fill */
 .progress {
     height: 100%;
     width: 0%;
@@ -149,7 +104,6 @@ p {
     backdrop-filter: blur(10px);
 }
 
-/* Time Display */
 #current-time,
 #duration,
 #duration-separator {
@@ -158,20 +112,17 @@ p {
     white-space: nowrap;
 }
 
-/* Ensure proper centering inside grid column 2 */
 .controls-container {
-    grid-column: 2;
+    grid-row: 2;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 12px;
-    /* Adjusts spacing between progress bar and play button */
     width: 100%;
-    /* Ensure full width to center properly */
 }
 
-/* Controls wrapper (centers play button properly) */
+/* controls wrapper (centers play button properly) */
 .controls {
     display: flex;
     justify-content: center;
@@ -180,83 +131,26 @@ p {
     gap: 5px;
 }
 
-/* Play Button (ensure it's large and clickable) */
 #play-pause,
 #prev-song,
 #next-song {
     background: none;
     border: none;
     font-size: 28px;
-    /* Increase SVG icon size */
     cursor: pointer;
     color: white;
     width: 48px;
-    /* Set a larger button size */
     height: 48px;
-    /* Ensure it remains circular */
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.1);
-    /* Light transparent background */
     transition: background 0.2s ease-in-out;
 }
 
-/* Hover effect to make it feel more interactive */
 #play-pause:hover,
 #prev-song:hover,
 #next-song:hover {
     background-color: rgba(255, 255, 255, 0.2);
-}
-
-.modal {
-    /* display: none; */
-    position: fixed;
-    z-index: 1;
-    padding-top: 100px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(15, 15, 15, 0.493);
-}
-
-.modal-content {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-}
-
-#closeContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    gap: 1rem;
-    align-items: center;
-    width: 97%;
-}
-
-.close {
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.close:hover,
-.close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-#closeHint {
-    color: #f1f1f1;
-    font-size: 20px;
-    opacity: 0.6;
-    font-weight: bold;
-    transition: 0.3s;
 }

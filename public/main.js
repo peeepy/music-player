@@ -8,9 +8,6 @@ const changeTextButton = document.getElementById("changeTextBtn");
 // const modalImg = document.getElementById("largeImage");
 // const closeBtn = document.getElementsByClassName("close")[0];
 
-changeTextButton.addEventListener('click', () => {
-    document.getElementById("hidetxt").classList.toggle('hidden')
-})
 // img.addEventListener('click', () => {
 //     modal.classList.toggle('hidden')
 //     modalImg.src=img.getAttribute('src')
