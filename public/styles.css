@@ -2,31 +2,30 @@
 :root {
     --player-width: 50%;
     --player-height: auto;
-    --player-display: grid;
-    --player-grid-template: auto auto;
-    --player-padding: 10px;
-    --player-gap: 10px;
+    --player-display: flex;
+    --player-flex-direction: column;
+    --player-padding: 20px;
+    --player-gap: 20px;
     --player-border-radius: 15px;
 
     --image-size: 256px;
-    --image-margin: 15px auto;
+    --image-margin: auto;
 
     --controls-flex-direction: column;
     --controls-alignment: center;
-    --controls-grid-column: auto;
 
     --progress-width: 90%;
-    --progress-height: 20px;
-    --progress-margin-bottom: 30px;
+    --progress-height: 8px;
+    --progress-margin-top: 10px;
+    --progress-margin-bottom: 20px;
 }
 
 /* Horizontal Mode Changes */
 body.horizontal-mode {
     --player-width: 95%;
-    --player-height: auto;
     --player-display: grid;
-    --player-grid-template: 1fr 800px 1fr;
-    --player-padding: 10px;
+    --player-flex-direction: row;
+    --player-padding: 15px;
     --player-gap: 10px;
 
     --image-size: 64px;
@@ -34,10 +33,10 @@ body.horizontal-mode {
 
     --controls-flex-direction: column;
     --controls-alignment: center;
-    --controls-grid-column: 2;
 
     --progress-width: 100%;
-    --progress-height: 20px;
+    --progress-height: 6px;
+    --progress-margin-top: 0px;
     --progress-margin-bottom: 0px;
 }
 
@@ -73,7 +72,7 @@ body {
     width: var(--player-width);
     height: var(--player-height);
     display: var(--player-display);
-    grid-template-columns: var(--player-grid-template);
+    flex-direction: var(--player-flex-direction);
     gap: var(--player-gap);
     padding: var(--player-padding);
     align-items: center;
@@ -125,6 +124,7 @@ body {
     justify-content: space-between;
     width: var(--progress-width);
     gap: 10px;
+    margin-top: var(--progress-margin-top);
     margin-bottom: var(--progress-margin-bottom);
 }
 
@@ -158,7 +158,6 @@ body {
 
 /* Controls Container */
 .controls-container {
-    grid-column: var(--controls-grid-column);
     display: flex;
     flex-direction: var(--controls-flex-direction);
     align-items: var(--controls-alignment);
