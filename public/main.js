@@ -1,34 +1,5 @@
 import { Playlist, Song } from './Playlist.js';
 
-const headline = document.getElementById("headline");
-const changeTextButton = document.getElementById("changeTextBtn");
-
-// const modal = document.getElementById("imageModal");
-// const img = document.getElementsByClassName("img")[0];
-// const modalImg = document.getElementById("largeImage");
-// const closeBtn = document.getElementsByClassName("close")[0];
-
-// img.addEventListener('click', () => {
-//     modal.classList.toggle('hidden')
-//     modalImg.src=img.getAttribute('src')
-// })
-
-// closeBtn.addEventListener('click', () => {
-//     modal.classList.toggle('hidden')
-// })
-// closeBtn.addEventListener('mouseover', () => {
-//     document.getElementById('closeHint').classList.toggle('hidden')
-// })
-// closeBtn.addEventListener('mouseout', () => {
-//     document.getElementById('closeHint').classList.toggle('hidden')
-// })
-
-// modal.addEventListener('click', (event) => {
-//     if (event.target == modal) {
-//         modal.classList.toggle('hidden')
-//     }
-// })
-
 /// MUSIC
 const audio = document.getElementById("audio");
 const playPauseBtn = document.getElementById("play-pause");
@@ -39,6 +10,11 @@ const durationEl = document.getElementById("duration");
 const songTitleEl = document.getElementById("song-title");
 const songArtistEl = document.getElementById("song-artist");
 const albumArtEl = document.getElementById("album-image");
+
+albumArtEl.addEventListener("click", function () {
+    document.body.classList.toggle("horizontal-mode");
+});
+
 
 const playIcon = `
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
