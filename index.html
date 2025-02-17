@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Basic HTML Skeleton</title>
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 id="headline">Title</h1>
+        <button id="changeTextBtn" class="btn">Click</button>
+        <!-- <div class="card" id="hidetxt">
+      <img
+            src="https://images.ctfassets.net/7mmwp5vb96tc/7yiYSQBkJhMRHo4TUMPyWb/cf3e69523f903a1fe6d3938fd1ed0047/hamn-in-senja-B_rd-L_ken-www.nordnorge.com?q=75&w=1920&fm=webp"
+            class="img" />
+    </div> -->
+        <!-- <div id="imageModal" class="modal hidden">
+                <div id="closeContainer">
+                  <span id="closeHint" class="hidden">You can also click anywhere inside the window to close</span>
+                  <span class="close">&times;</span>
+                </div>
+                <img class="modal-content" id="largeImage">
+              </div> -->
+
+
+        <div class="card-horizontal" id="hidetxt">
+            <audio id="audio"></audio>
+
+
+            <div class="music-info">
+                <span id="song-title"></span>
+                <span id="song-artist"></span>
+                <img class="img" id="artist-image"
+                    src="https://preview.redd.it/g119ewgm4mm71.jpg?auto=webp&s=a481fb55a3ba38f7845ac25f8e68f5585da849dc" />
+            </div>
+
+            <div class="controls-container">
+
+                <div class="controls">
+                    <button id="prev-song">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M8 8C8.55228 8 9 8.44772 9 9V15C9 15.5523 8.55228 16 8 16C7.44771 16 7 15.5523 7 15V9C7 8.44772 7.44771 8 8 8ZM16 15.4641L10 12L16 8.5359V15.4641Z"
+                                fill="currentColor" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+                                fill="currentColor" />
+                        </svg>
+                    </button>
+                    <button id="play-pause">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21ZM12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23Z"
+                                fill="currentColor" />
+                            <path d="M16 12L10 16.3301V7.66987L16 12Z" fill="currentColor" />
+                        </svg>
+                    </button>
+
+                    <button id="next-song">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21ZM1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12ZM14 9C14 8.44772 14.4477 8 15 8C15.5523 8 16 8.44772 16 9V15C16 15.5523 15.5523 16 15 16C14.4477 16 14 15.5523 14 15V9ZM13 12L7 15.4641V8.5359L13 12Z"
+                                fill="currentColor" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="progress-wrapper">
+                    <div class="progress-container" id="progress-container">
+                        <div class="progress" id="progress"></div>
+                    </div>
+                    <span id="current-time">0:00</span><span id="duration-separator">/</span><span
+                        id="duration">0:00</span>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- <script type="module" src="Playlist.js"></script> -->
+        <script type="module" src="main.js"></script>
+
+</body>
+
+</html>

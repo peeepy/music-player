@@ -1,0 +1,257 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr minmax(auto, 1200px) 1fr;
+    /* creates 3 columns. 1 and 3
+    expand to fill all avail. space */
+    min-height: 100vh;
+    background-image: url("https://w.wallhaven.cc/full/5g/wallhaven-5glev8.png");
+    font-family: 'Ubuntu', Arial, sans-serif;
+
+}
+
+.container {
+    grid-column: 2;
+    /* adds child content in grid column 2*/
+    /* border-radius: 15px; */
+    /* border: 1px solid rgba(77, 77, 77, 0.10); */
+    background: rgba(77, 77, 77, 0.10);
+    /* backdrop-filter: blur(17.5px); */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
+}
+
+h1 {
+    color: #C5B9CD;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    color: #1b1b1b;
+    text-align: center;
+}
+
+.btn {
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.171);
+    background: rgba(225, 0, 255, 0.1);
+    backdrop-filter: blur(17.5px);
+    color: #E0E0E0;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #048BA8;
+}
+
+.card {
+    box-sizing: border-box;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.171);
+    background: rgba(77, 77, 77, 0.10);
+    backdrop-filter: blur(17.5px);
+    margin: 15px;
+    width: 400px;
+    height: 400px;
+    flex-shrink: 0;
+}
+
+.card-horizontal {
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.171);
+    background: rgba(77, 77, 77, 0.10);
+    backdrop-filter: blur(17.5px);
+    margin: 15px;
+    width: 95%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 800px 1fr;
+    /* Three-column layout */
+    gap: 10px;
+    padding: 10px;
+    align-items: center;
+}
+
+.music-info {
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#song-title,
+#song-artist {
+    display: flex;
+    font-size: 16px;
+    color: white;
+    font-weight: 500;
+    margin-bottom: 5px;
+    /* Space before progress bar */
+}
+
+.img {
+    max-width: 64px;
+    max-height: 64px;
+    border-radius: 10%;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.img:hover {
+    opacity: 0.8;
+}
+
+/* Progress Bar & Time */
+.progress-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+}
+
+/* Progress Bar */
+.progress-container {
+    flex-grow: 1;
+    height: 20px;
+    /* Make it thinner */
+    background: #ffffff6c;
+    border-radius: 18px;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Progress Fill */
+.progress {
+    height: 100%;
+    width: 0%;
+    background: #47305ad0;
+    border-radius: 18px;
+    backdrop-filter: blur(10px);
+}
+
+/* Time Display */
+#current-time,
+#duration,
+#duration-separator {
+    font-size: 14px;
+    color: white;
+    white-space: nowrap;
+}
+
+/* Ensure proper centering inside grid column 2 */
+.controls-container {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    /* Adjusts spacing between progress bar and play button */
+    width: 100%;
+    /* Ensure full width to center properly */
+}
+
+/* Controls wrapper (centers play button properly) */
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 5px;
+}
+
+/* Play Button (ensure it's large and clickable) */
+#play-pause,
+#prev-song,
+#next-song {
+    background: none;
+    border: none;
+    font-size: 28px;
+    /* Increase SVG icon size */
+    cursor: pointer;
+    color: white;
+    width: 48px;
+    /* Set a larger button size */
+    height: 48px;
+    /* Ensure it remains circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Light transparent background */
+    transition: background 0.2s ease-in-out;
+}
+
+/* Hover effect to make it feel more interactive */
+#play-pause:hover,
+#prev-song:hover,
+#next-song:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.modal {
+    /* display: none; */
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(15, 15, 15, 0.493);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+#closeContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 1rem;
+    align-items: center;
+    width: 97%;
+}
+
+.close {
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#closeHint {
+    color: #f1f1f1;
+    font-size: 20px;
+    opacity: 0.6;
+    font-weight: bold;
+    transition: 0.3s;
+}
